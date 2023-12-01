@@ -54,12 +54,12 @@ def booklist():
         con = sql.connect("database3.db")
         con.row_factory = sql.Row
         cur = con.cursor()
-        cur.execute("slelect * from book")
+        cur.execute("select * from book")
         rows = cur.fetchall()
         return render_template('booklist.html',rows=rows)
 
 if __name__=='__main__':
-      app.run()
+      app.run(debug=True,port=8004)
 
 
 
